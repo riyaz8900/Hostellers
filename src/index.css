@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  font-family: Oswald;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
