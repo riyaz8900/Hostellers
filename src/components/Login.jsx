@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import google from '../assets/googl.avif'
 import Loader from './Loader'
+import { Link } from 'react-router-dom'
 
 function Login() {
        const [loading, setLoading] = useState(true)
@@ -17,7 +18,20 @@ function Login() {
         return <Loader/>
     }
     return (
-        <div>
+        <div className='container mx-auto px-3'>
+            <ol className="list-reset flex">
+                    <li>
+                        <Link to="/" className="text-blue-600 hover:underline">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <span className="mx-2"> / </span>
+                    </li>
+
+
+                    {/* <li className="text-gray-800 font-semibold">{selectedHostel.title}</li> */}
+                </ol>
             <div className='flex items-center h-screen justify-center py-5'>
                 <div className='shadow-lg px-4 py-4 w-[600px] '>
                     <div >

@@ -1,59 +1,38 @@
-import React from 'react'
-import Button from './Button'
-import events from '../assets/filteration_btn/events.svg'
-import CityDateDropdown from './CityDateDropdown'
+import React from 'react';
+import Button from './Button';
+import events from '../assets/filteration_btn/events.svg';
+import CityDateDropdown from './CityDateDropdown';
+
+const filterButtons = [
+  { text: "Events", icon: events },
+  { text: "Hostels", icon: events },
+  { text: "Work stations", icon: events },
+  { text: "Colive", icon: events },
+  { text: "Commune", icon: events },
+  { text: "Groups", icon: events },
+];
+
 function Banner() {
-    return (
-       <div className='py-4'>
-         <div className='py-3 flex flex-wrap gap-4'>
-            <Button
-                text="Events"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-             <Button
-                text="Hostels"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-             <Button
-                text="Work stations"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-             <Button
-                text="Colive"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-             <Button
-                text="Commune"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-              <Button
-                text="Groups"
-                iconSrc={events}
-                iconAlt="Events icon"
-                className="flex items-center gap-2 py-2 rounded bg-white px-3 py-1"
-                onClick={() => console.log('Clicked!')}
-            />
-        </div>
-        <div className='mb-4'>
-           <CityDateDropdown/>
-        </div>
-       </div>
-    )
+  return (
+    <section className="relative py-5">
+      <div className="flex flex-wrap gap-3 py-3">
+        {filterButtons.map((btn, index) => (
+          <Button
+            key={index}
+            text={btn.text}
+            iconSrc={btn.icon}
+            iconAlt={`${btn.text} icon`}
+            className="flex items-center gap-2 rounded bg-white px-4 py-2 shadow-sm hover:shadow-md transition"
+            onClick={() => console.log(`${btn.text} clicked`)}
+          />
+        ))}
+      </div>
+
+      <div className="mt-6">
+        <CityDateDropdown />
+      </div>
+    </section>
+  );
 }
 
-export default Banner
+export default Banner;

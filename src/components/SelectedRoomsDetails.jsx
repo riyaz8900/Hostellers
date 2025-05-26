@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { FaCalendarCheck } from "react-icons/fa";
 
 import hostelImage1 from '../assets/filteration_btn/hoistel10.webp';
 import hostelImage3 from '../assets/filteration_btn/hostel5.webp';
@@ -9,7 +10,8 @@ import Card from './common/Card';
 import SimilarProperties from './SimilarProperties';
 import CartItem from './CartItem';
 import Cart from './Cart';
-
+import Lottie from 'react-lottie';
+import animationData from '../../robot-animation.json';
 function SelectedRoomsDetails() {
     const { id } = useParams();
     const [isExpanded, setIsExpanded] = useState(false);
@@ -168,11 +170,45 @@ function SelectedRoomsDetails() {
         },
     ];
 
+    const defaultOptions = {
+        loop: true,
+        autoplay: true, // Animation will autoplay
+        animationData: animationData, // Lottie JSON data
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     // Find the hostel by id from param
     const selectedHostel = hostels.find(h => h.id === id);
 
     if (!selectedHostel) {
-        return <div className="container mx-auto py-4 text-sm text-center lg:text-2xl">Hostel not found</div>;
+
+        return <div className='container mx-auto px-3'>
+            <nav className="text-gray-600 mb-4 text-sm" aria-label="Breadcrumb">
+                <ol className="list-reset flex">
+                    <li>
+                        <Link to="/" className="text-blue-600 hover:underline">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <span className="mx-2"> / </span>
+                    </li>
+
+
+                    {/* <li className="text-gray-800 font-semibold">{destinations.title}</li> */}
+                </ol>
+            </nav>
+            <div className="container flex-col mx-auto flex items-center justify-center py-4 h-screen text-sm ">
+
+                <h1 className='text-center lg:text-2xl'>Hostel not found</h1>
+                <div className="mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                    {/* Lottie animation */}
+                    <Lottie options={defaultOptions} height={300} width={300} />
+                </div>
+            </div>;
+        </div>
     }
     const roomData = [
         {
@@ -184,7 +220,8 @@ function SelectedRoomsDetails() {
             discountLabel: '35% OFF',
             duration: '1 Night',
             description: 'Spacious 216 sq ft room with comfy bunk beds',
-            soldOut: true
+            soldOut: true,
+            addBed:true
         },
         {
             image: hostelImage3,
@@ -195,7 +232,8 @@ function SelectedRoomsDetails() {
             discountLabel: '25% OFF',
             duration: '2 Nights',
             description: 'Enjoy a private room with a sea view and balcony',
-            soldOut: false
+            soldOut: false,
+              addBed:true
         },
         {
             image: hostelImage1,
@@ -206,7 +244,8 @@ function SelectedRoomsDetails() {
             discountLabel: '35% OFF',
             duration: '1 Night',
             description: 'Spacious 216 sq ft room with comfy bunk beds',
-            soldOut: true
+            soldOut: true,
+              addBed:true
         },
         {
             image: hostelImage4,
@@ -217,7 +256,8 @@ function SelectedRoomsDetails() {
             discountLabel: '25% OFF',
             duration: '2 Nights',
             description: 'Enjoy a private room with a sea view and balcony',
-            soldOut: false
+            soldOut: false,
+              addBed:false
         },
 
     ];
@@ -293,11 +333,14 @@ function SelectedRoomsDetails() {
 
             <div className="mt-4 text-xl font-semibold py-3">{selectedHostel.price}</div>
 
-            <div>
-                <h1 className='lg:text-3xl'>Availablity</h1>
-            </div>
+           
             <div className='flex justify-between flex-wrap scroll'>
+                
                 <div className="space-y-4">
+                     <div className='flex items-center justify-between'>
+                <h1 className='lg:text-3xl'>Availablity</h1>
+                <div className='bg-yellow-300 px-3 py-2 rounded-full flex gap-2 items-center'><span><FaCalendarCheck/></span> 12/01/26</div>
+            </div>
                     <div className="space-y-4">
                         {roomData.map((room, index) => (
                             <Card key={index} {...room} />
@@ -305,14 +348,14 @@ function SelectedRoomsDetails() {
                     </div>
                 </div>
 
-                <div className=''> 
+                <div className=''>
                     <img src={summary} />
                     <div>
                         {/* <CartItem  hostelImage1={hostelImage1}  /> */}
-                        <Cart/>
+                        <Cart />
                     </div>
                 </div>
-                
+
             </div>
             <div className='py-3'>
                 <h1 className='text-3xl py-2'>Similar Properties</h1>

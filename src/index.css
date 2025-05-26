@@ -9,3 +9,7 @@ body{
 .react-datepicker-wrapper {
   width: 100%;
 }
+/* Force yellow stroke for RotatingLines loader */
+.custom-yellow-loader svg {
+  stroke: #FFD700 !important;
+}

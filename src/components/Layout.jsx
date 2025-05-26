@@ -9,7 +9,7 @@ function Layout() {
         <div>
           <Navbar />
         </div>
-        <div>
+        <div className='pt-[100px]'>
           <Outlet />
         </div>
       </div>

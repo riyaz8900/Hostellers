@@ -21,7 +21,15 @@ import SimilarProperties from '../components/SimilarProperties'
 
 
 function Home() {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [hostel, setHostels] = useState([]);
+    hostel;
+    useEffect(() => {
+        setTimeout(() => {
+            setHostels(data);
+            setLoading(false);
+        }, 1500);
+    }, []);
 
     const data = [
         { title: 'What is your return policy?', content: 'We accept returns within 30 days of purchase.' },
@@ -35,9 +43,12 @@ function Home() {
 
         return () => clearTimeout(timer)
     }, [])
-    if (loading) {
-        return <Loader />
-    }
+    // if (loading) {
+    //     return <Loader />
+
+    // }
+
+
     const hostels = [
         {
             id: 'kormangla',
@@ -199,19 +210,21 @@ function Home() {
                     <div className="flex-grow border-t border-gray-200"></div>
                 </div>
                 <div className="grid grid-cols-1 p-2 lg:p-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {hostels.map((hostel) => (
-                        <Link to={`/hostel/${hostel.id}`} key={hostel.id}>
-                            <Card
-                                image={hostel.image}
-                                title={hostel.title}
-                                description={hostel.description}
-                                price={hostel.price}
-                                roomsView={hostel.roomsView}
-
-                            />
-                        </Link>
-                    ))}
+                    {loading
+                        ? Array.from({ length: 8 }).map((_, index) => <CardSkeleton key={index} />)
+                        : hostels.map((hostel) => (
+                            <Link to={`/hostel/${hostel.id}`} key={hostel.id}>
+                                <Card
+                                    image={hostel.image}
+                                    title={hostel.title}
+                                    description={hostel.description}
+                                    price={hostel.price}
+                                    roomsView={hostel.roomsView}
+                                />
+                            </Link>
+                        ))}
                 </div>
+
 
                 <div className='mt-4'>
                     <h1 className='text-2xl px-2 py-2'>OFFERS FOR YOU</h1>
@@ -230,7 +243,7 @@ function Home() {
                 <div>
                     <Destination />
                 </div>
-              
+
                 <div>
                     <div className="flex items-center my-2 py-3">
                         <div className="flex-grow border-t border-gray-200"></div>
@@ -239,7 +252,7 @@ function Home() {
                     </div>
                     <SimilarProperties />
                 </div>
-                  <div className="p-2 lg:p-0">
+                <div className="p-2 lg:p-0">
                     <Accordian items={data} />
                 </div>
             </div>
@@ -248,3 +261,14 @@ function Home() {
 }
 
 export default Home
+
+function CardSkeleton() {
+    return (
+        <div className="animate-pulse rounded-lg bg-white p-4 shadow">
+            <div className="h-40 bg-gray-300 rounded mb-4" />
+            <div className="h-4 bg-gray-300 rounded w-3/4 mb-2" />
+            <div className="h-4 bg-gray-200 rounded w-2/3 mb-2" />
+            <div className="h-6 bg-gray-300 rounded w-1/3 mt-4" />
+        </div>
+    );
+}
