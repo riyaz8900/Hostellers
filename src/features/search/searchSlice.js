@@ -1,11 +1,10 @@
-// src/features/search/searchSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   selectedState: null,
   selectedCity: null,
-  checkInDate: null, // Will store ISO string
-  checkOutDate: null, // Will store ISO string
+  checkInDate: null, 
+  checkOutDate: null,
   filteredHostels: [],
 };
 
@@ -20,19 +19,13 @@ const searchSlice = createSlice({
     setSelectedCity: (state, action) => {
       state.selectedCity = action.payload;
     },
-    // setCheckInDate: (state, action) => {
-    //   state.checkInDate = action.payload ? action.payload.toISOString() : null;
-    // },
-    // setCheckOutDate: (state, action) => {
-    //   state.checkOutDate = action.payload ? action.payload.toISOString() : null;
-    // },
-    // In searchSlice.js
-setCheckInDate: (state, action) => {
-  state.checkInDate = action.payload; // Already an ISO string
-},
-setCheckOutDate: (state, action) => {
-  state.checkOutDate = action.payload; // Already an ISO string
-},
+
+    setCheckInDate: (state, action) => {
+      state.checkInDate = action.payload;
+    },
+    setCheckOutDate: (state, action) => {
+      state.checkOutDate = action.payload;
+    },
     setFilteredHostels: (state, action) => {
       state.filteredHostels = action.payload;
     },

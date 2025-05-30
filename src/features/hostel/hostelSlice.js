@@ -1,4 +1,3 @@
-// src/features/hostel/hostelSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

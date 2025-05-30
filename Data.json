@@ -28,6 +28,19 @@
       },
       {
         "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      },
+       {
+        "id": 3,
         "image": "/hostel6.jpeg",
         "title": "Private Room with Sea View",
         "guests": 2,
@@ -43,7 +56,7 @@
     "categories": [
       {
         "type": "8 bed Mixed dormitory",
-        "image": "/hostel21.jpeg",
+        "image": "/hostel6.jpeg",
         "price": "879",
         "stayDuration": "1 day",
         "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
@@ -57,7 +70,7 @@
       },
       {
         "type": "8 bed female dormitory",
-        "image": "/hostel21.jpeg",
+        "image": "/hostel6.jpeg",
         "price": "879",
         "stayDuration": "1 day",
         "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
@@ -156,7 +169,7 @@
     "title": "Indiranagar Hosteller Bangalore",
     "description": "Spacious room with shared kitchen access.",
     "price": "Starting @ ₹840/-",
-    "image": "/hostel7.jpeg",
+    "image": "/hostel23.jpeg",
     "checkInTime": "15:00",
     "checkOutTime": "10:00",
     "availableDates": [
@@ -214,6 +227,261 @@
       {
         "type": "8 bed female dormitory",
         "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "state": "Kerla",
+    "hostelName": " Hosteller kerla trivandrum",
+    "title": " Hosteller kerla trivandrum",
+    "description": "Affordable and cozy room with AC and Wi-Fi.",
+    "price": "Starting @ ₹740/-",
+    "image": "/hoistel10.webp",
+    "checkInTime": "14:00",
+    "checkOutTime": "11:00",
+    "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"],
+    "details": " is where kerla trivandrum’s pulse beats the fastest. Known for its buzzing cafés, upscale shopping centers, and legendary nightlife.",
+    "moreDetails": "The Hosteller kerla trivandrum, , was our first step into the city, featuring suspended chrome car seats, interactive art pieces, and sleek modern design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      },
+       {
+        "id": 3,
+        "image": "/hostel6.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel6.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel6.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "state": "Maharastra",
+    "hostelName": "bandra Hosteller mumbai",
+    "title": "bandra Hosteller mumbai",
+    "description": "Affordable and cozy room with AC and Wi-Fi.",
+    "price": "Starting @ ₹740/-",
+    "image": "/hostel24.webp",
+    "checkInTime": "14:00",
+    "checkOutTime": "11:00",
+    "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"],
+    "details": "bandra is where mumbai’s pulse beats the fastest. Known for its buzzing cafés, upscale shopping centers, and legendary nightlife.",
+    "moreDetails": "The Hosteller mumbai, Koramangala, was our first step into the city, featuring suspended chrome car seats, interactive art pieces, and sleek modern design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      },
+       {
+        "id": 3,
+        "image": "/hostel6.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel6.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel6.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "state": "Gujrat",
+    "hostelName": "Gujrat Hosteller ",
+    "title": "Gujrat Hosteller Gujrat",
+    "description": "Affordable and cozy room with AC and Wi-Fi.",
+    "price": "Starting @ ₹740/-",
+    "image": "/hostel22.jpeg",
+    "checkInTime": "14:00",
+    "checkOutTime": "11:00",
+    "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"],
+    "details": "Gujrat is where Gujratis pulse beats the fastest. Known for its buzzing cafés, upscale shopping centers, and legendary nightlife.",
+    "moreDetails": "The Hosteller Gujrat, was our first step into the city, featuring suspended chrome car seats, interactive art pieces, and sleek modern design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      },
+       {
+        "id": 3,
+        "image": "/hostel6.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel6.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel6.jpeg",
         "price": "879",
         "stayDuration": "1 day",
         "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]

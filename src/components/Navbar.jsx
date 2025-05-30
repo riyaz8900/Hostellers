@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaUser, FaBars } from "react-icons/fa6";
 import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 import { Link, useNavigate } from 'react-router-dom';
+import OfferSlider from "./OfferSlider";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -169,6 +170,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
+      <OfferSlider/>
     </div>
   );
 }

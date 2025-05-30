@@ -15,6 +15,7 @@ import offer1 from '../assets/filteration_btn/hosterl13.webp';
 import offer2 from '../assets/filteration_btn/hostel14.webp';
 import offer3 from '../assets/filteration_btn/hostel18.webp';
 import offer4 from '../assets/filteration_btn/hostel19.webp';
+import OfferSlider from '../components/OfferSlider';
 
 function Home() {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ function Home() {
   return (
     <div>
       <div className="container-fluid mx-auto py-3 bg-yellow-300">
+        
         <div className="container mx-auto lg:p-0 p-2">
           <Banner hostels={hostels} />
         </div>

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { FaRegUser } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
+import { loadStripe } from '@stripe/stripe-js';
 
 function Card({
+    price,
     image,
     title,
     guests = 1,
@@ -22,48 +25,68 @@ function Card({
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
-    const StepperHeader = ({ currentStep }) => {
-    const steps = ["Options", "Review", "Payment", "Success"];
-    return (
-        <div className="relative flex justify-between items-center mb-6">
-            {steps.map((stepLabel, i) => (
-                <React.Fragment key={i}>
-                    <div className="flex flex-col items-center z-10">
-                        <div
-                            className={`w-8 h-8 flex items-center justify-center rounded-full border-2 text-sm font-bold
-                                ${currentStep > i + 1
-                                    ? 'bg-green-500 text-white border-green-500'
-                                    : currentStep === i + 1
-                                        ? 'bg-blue-600 text-white border-blue-600'
-                                        : 'border-gray-300 text-gray-400'}`}
-                        >
-                            {currentStep > i + 1 ? '✓' : i + 1}
-                        </div>
-                        <p className={`mt-1 text-xs ${currentStep >= i + 1 ? 'text-blue-600' : 'text-gray-400'}`}>
-                            {stepLabel}
-                        </p>
-                    </div>
+    const sendEmail = () => {
+        const templateParams = {
+            to_name: name,
+            to_email: email,
+            booking_type: bookingType,
+            guests: people,
+            checkin: formatDate(checkInDate),
+            checkout: formatDate(checkOutDate),
+            total_price: displayDiscountedPrice * people
+        };
 
-                    {/* Horizontal line between steps */}
-                    {i < steps.length - 1 && (
-                        <div className="absolute top-4 left-[calc(50%+1rem)] right-[calc(50%-1rem)] h-0.5">
+
+        emailjs.send('service_d3o1f9e', 'template_iboq736', templateParams, 'qQYG6VzZqbn3Fon_B')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
+    };
+
+    const StepperHeader = ({ currentStep }) => {
+        const steps = ["Options", "Review", "Payment", "Success"];
+        return (
+            <div className="relative flex justify-between items-center mb-6">
+                {steps.map((stepLabel, i) => (
+                    <React.Fragment key={i}>
+                        <div className="flex flex-col items-center z-10">
                             <div
-                                className={`w-full h-full ${currentStep > i + 1 ? 'bg-blue-600' : 'bg-gray-300'}`}
-                                style={{
-                                    position: 'absolute',
-                                    left: `${(i + 1) * 25}%`,
-                                    width: '25%',
-                                    height: '2px',
-                                    zIndex: 0
-                                }}
-                            />
+                                className={`w-8 h-8 flex items-center justify-center rounded-full border-2 text-sm font-bold
+                                ${currentStep > i + 1
+                                        ? 'bg-green-500 text-white border-green-500'
+                                        : currentStep === i + 1
+                                            ? 'bg-blue-600 text-white border-blue-600'
+                                            : 'border-gray-300 text-gray-400'}`}
+                            >
+                                {currentStep > i + 1 ? '✓' : i + 1}
+                            </div>
+                            <p className={`mt-1 text-xs ${currentStep >= i + 1 ? 'text-blue-600' : 'text-gray-400'}`}>
+                                {stepLabel}
+                            </p>
                         </div>
-                    )}
-                </React.Fragment>
-            ))}
-        </div>
-    );
-};
+
+                        {/* Horizontal line between steps */}
+                        {i < steps.length - 1 && (
+                            <div className="absolute top-4 left-[calc(50%+1rem)] right-[calc(50%-1rem)] h-0.5">
+                                <div
+                                    className={`w-full h-full ${currentStep > i + 1 ? 'bg-blue-600' : 'bg-gray-300'}`}
+                                    style={{
+                                        position: 'absolute',
+                                        left: `${(i + 1) * 25}%`,
+                                        width: '25%',
+                                        height: '2px',
+                                        zIndex: 0
+                                    }}
+                                />
+                            </div>
+                        )}
+                    </React.Fragment>
+                ))}
+            </div>
+        );
+    };
 
     // const handleBookingSubmit = () => {
     //     console.log({
@@ -108,6 +131,37 @@ function Card({
     const checkOutDate = checkInDate ? new Date(new Date(checkInDate).setDate(checkInDate.getDate() + 1)) : null;
     const formatDate = date => date?.toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
 
+
+    const stripePromise = loadStripe('pk_test_51RU4VkQ4qCp34a1M9zdQmwmGmIKoZdrSrIsus9aJNxfCRKGmeDcgxH3EFeQFWtWPwvT861w1pEe3dW65D27OyG0K00bMyqt20B'); // Replace with your Stripe Publishable Key
+
+    const handleStripePayment = async () => {
+        const stripe = await stripePromise;
+
+        const response = await fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name,
+                email,
+                phone,
+                guests: people,
+                price: displayDiscountedPrice * people,
+                checkin: formatDate(checkInDate),
+                checkout: formatDate(checkOutDate)
+            })
+        });
+
+        const session = await response.json();
+
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id,
+        });
+
+        if (result.error) {
+            console.error(result.error.message);
+        }
+    };
+
     return (
         <>
             {/* Card */}
@@ -130,7 +184,7 @@ function Card({
                             <span className="text-red-600 line-through mr-2">₹{displayOriginalPrice}</span>
                             <span className="bg-red-100 text-red-600 px-2 rounded text-sm font-semibold">{displayDiscountLabel}</span>
                         </p>
-                        <p className="font-bold text-green-700 text-lg">₹{displayDiscountedPrice}</p>
+                        <p className="font-bold text-green-700 text-lg">₹{price}</p>
                     </div>
                     <p className="text-gray-700 mb-4">{description}</p>
                     <div className='flex justify-between items-center'>
@@ -144,11 +198,16 @@ function Card({
                             <button className="bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed" disabled>Sold Out</button>
                         ) : (
                             <button
-                                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
-                                onClick={() => setShowModal(true)}
+                                className="bg-yellow-300 font-semibold px-4 py-2 rounded"
+                                onClick={() => {
+
+                                    setStep(1);
+                                    setShowModal(true)
+                                }}
                             >
-                                Book Now
+                                Book
                             </button>
+
                         )}
                     </div>
                 </div>
@@ -254,7 +313,15 @@ function Card({
                             <>
                                 <h3 className="text-xl font-bold mb-4">Payment</h3>
                                 <p className="mb-6 text-sm text-gray-600">Integrate a payment gateway here (Stripe, Razorpay, etc.)</p>
-                                <button className="w-full bg-green-600 text-white px-4 py-2 rounded" onClick={() => setStep(4)}>Pay & Confirm</button>
+                                <button className="w-full bg-green-600 text-white px-4 py-2 rounded"
+                                    onClick={() => {
+
+                                        setStep(4);
+                                        sendEmail();
+                                        handleStripePayment();
+
+                                    }}
+                                >Pay & Confirm</button>
                                 <button className="text-sm text-blue-600 mt-3" onClick={() => setStep(2)}>Back to Review</button>
                             </>
                         )}
