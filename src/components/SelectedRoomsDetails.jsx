@@ -9,12 +9,13 @@ import SimilarProperties from './SimilarProperties';
 import AvailabilityHeader from './AvailabilityHeader';
 
 import animationData from '../../robot-animation.json';
-import hostels from '/Data.json';
+import { useSelector } from 'react-redux';
+// import hostels from '/Data.json';
 
 function SelectedRoomsDetails() {
     const { id } = useParams();
     const [isExpanded, setIsExpanded] = useState(false);
-
+     const {hostels} = useSelector((state)=>state.hostel)
     const selectedHostel = hostels.find(h => String(h.id) === String(id));
 console.log(selectedHostel)
     const defaultOptions = {

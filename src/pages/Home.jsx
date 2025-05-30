@@ -26,7 +26,7 @@ function Home() {
     const fetchData = async () => {
       dispatch(setLoading(true));
       try {
-        const res = await fetch('/Data.json');
+        const res = await fetch('/data/Data.json');
         const data = await res.json();
         setTimeout(() => {
           dispatch(setHostels(data));
@@ -58,6 +58,9 @@ function Home() {
 
   return (
     <div>
+      <div>
+          <OfferSlider/>
+        </div>
       <div className="container-fluid mx-auto py-3 bg-yellow-300">
         
         <div className="container mx-auto lg:p-0 p-2">
