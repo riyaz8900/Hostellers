@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -6,28 +7,33 @@ const steps = [
     title: "Register / Login",
     description:
       "Create your account or login to start your booking journey.",
+    path: "/login"
   },
   {
     emoji: "🔍",
     title: "Search Hostel",
     description:
       "Find hostels by name and pick your check-in and check-out dates.",
+    path: "/"
   },
   {
     emoji: "🛏️",
     title: "Book Bed / Room",
     description: "Choose your preferred bed or room and confirm your booking.",
+    path: "/"
   },
   {
     emoji: "💳",
     title: "Make Payment",
     description: "Complete payment securely to finalize your reservation.",
+    path: "/"
   },
   {
     emoji: "✅",
     title: "Booking Confirmed",
     description:
       "Receive confirmation with details. Check-in official time: 2 PM, Check-out: 11 AM.",
+    path: "/"
   },
 ];
 
@@ -89,7 +95,7 @@ export default function Journey() {
 
         {/* Steps */}
         <div className="space-y-20">
-          {steps.map(({ emoji, title, description }, idx) => {
+          {steps.map(({ emoji, title, description, path }, idx) => {
             const isVisible = visibleSteps.includes(idx);
             const isActive = visibleSteps.length - 1 === idx;
 
@@ -122,7 +128,7 @@ export default function Journey() {
                 </div>
 
                 <div className="select-none">
-                  <h2 className="text-3xl font-bold text-yellow-800">{title}</h2>
+                  <h2 className="text-3xl font-bold text-yellow-800"><Link to={path}>{title}</Link></h2>
                   <p className="mt-2 max-w-xl text-yellow-900">{description}</p>
                 </div>
               </div>
@@ -133,7 +139,7 @@ export default function Journey() {
         {visibleSteps.length === steps.length && <Confetti />}
       </div>
 
-    
+
       <style>{`
         @keyframes bounceScale {
           0%, 100% { transform: translateY(0) scale(1); }

@@ -12,7 +12,7 @@ const filterButtons = [
   { text: "Groups", icon: events },
 ];
 
-function Banner() {
+function Banner({hostels}) {
   return (
     <section className="relative py-5">
       <div className="flex flex-wrap gap-3 py-3">
@@ -29,7 +29,7 @@ function Banner() {
       </div>
 
       <div className="mt-6">
-        <CityDateDropdown />
+        <CityDateDropdown hostels={hostels} />
       </div>
     </section>
   );

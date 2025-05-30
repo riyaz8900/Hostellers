@@ -1,113 +1,113 @@
+// // src/components/common/Select.jsx
+// import { useState } from 'react';
+// import {
+//   Label,
+//   Listbox,
+//   ListboxButton,
+//   ListboxOption,
+//   ListboxOptions,
+// } from '@headlessui/react';
+// import { ChevronUpDownIcon } from '@heroicons/react/16/solid';
+// import { CheckIcon } from '@heroicons/react/20/solid';
 
+// export default function Select({ 
+//   title, 
+//   options = [], 
+//   value, 
+//   onChange, 
+//   isDisabled = false 
+// }) {
+//   const [query, setQuery] = useState('');
 
-import { useState } from 'react'
-import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
-import { ChevronUpDownIcon } from '@heroicons/react/16/solid'
-import { CheckIcon } from '@heroicons/react/20/solid'
+//   const filteredOptions =
+//     query === ''
+//       ? options
+//       : options.filter((option) =>
+//           option.label.toLowerCase().includes(query.toLowerCase())
+//         );
 
-const people = [
-  {
-    id: 1,
-    name: 'The Hosteller kormangala Bangalore',
-    avatar:
-      'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 2,
-    name: 'The Hosteller indranagar Bangalore',
-    avatar:
-      'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 3,
-    name: 'The Hosteller  Trivandrum',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80',
-  },
-  {
-    id: 4,
-    name: 'The Hosteller brigrade Bangalore',
-    avatar:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 5,
-    name: 'The Hosteller Surat',
-    avatar:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 6,
-    name: 'The Hosteller Coorg',
-    avatar:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 7,
-    name: 'The Hosteller Manali',
-    avatar:
-      'https://images.unsplash.com/photo-1568409938619-12e139227838?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 8,
-    name: 'The Hosteller Kashmir',
-    avatar:
-      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 9,
-    name: 'The Hosteller Hyderabad',
-    avatar:
-      'https://images.unsplash.com/photo-1584486520270-19eca1efcce5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    id: 10,
-    name: 'The Hosteller Lucknow',
-    avatar:
-      'https://images.unsplash.com/photo-1561505457-3bcad021f8ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-]
+//   return (
+//     <Listbox
+//       value={value}
+//       onChange={(val) => {
+//         setQuery('');
+//         onChange && onChange(val);
+//       }}
+//       disabled={isDisabled}
+//     >
+//       <Label className="block text-sm font-medium text-gray-900">{title}</Label>
+//       <div className="relative mt-2 border rounded-md">
+//         <ListboxButton className="flex w-full justify-between items-center rounded-md bg-white py-2 px-3 text-left text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 sm:text-sm disabled:opacity-50 disabled:cursor-not-allowed">
+//           <span className="block truncate">
+//             {value?.label || `Select ${title}`}
+//           </span>
+//           <ChevronUpDownIcon
+//             aria-hidden="true"
+//             className="h-5 w-5 text-gray-400"
+//           />
+//         </ListboxButton>
 
-export default function Select() {
-  const [selected, setSelected] = useState(people[3])
+//         <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+//           <div className="sticky top-0 bg-white px-3 py-2">
+//             <input
+//               type="text"
+//               value={query}
+//               onChange={(e) => setQuery(e.target.value)}
+//               className="w-full border border-gray-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
+//               placeholder={`Search ${title}...`}
+//             />
+//           </div>
 
+//           {filteredOptions.length === 0 ? (
+//             <div className="px-3 py-2 text-gray-500">No results found.</div>
+//           ) : (
+//             filteredOptions.map((option) => (
+//               <ListboxOption
+//                 key={option.value}
+//                 value={option}
+//                 className="relative cursor-default select-none py-2 pl-3 pr-9 hover:bg-yellow-100 data-[selected]:bg-indigo-600 data-[selected]:text-white"
+//               >
+//                 <div className="flex items-center">
+//                   <span className="ml-1 block truncate font-normal data-[selected]:font-semibold">
+//                     {option.label}
+//                   </span>
+//                 </div>
+
+//                 <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 data-[selected]:block hidden">
+//                   <CheckIcon className="h-5 w-5" aria-hidden="true" />
+//                 </span>
+//               </ListboxOption>
+//             ))
+//           )}
+//         </ListboxOptions>
+//       </div>
+//     </Listbox>
+//   );
+// }
+import React from 'react';
+
+const Select = ({ title, options = [], value, onChange, isDisabled = false }) => {
   return (
-    <Listbox value={selected} onChange={setSelected}>
-      <Label className="block text-sm/6 font-medium text-gray-900">Select Hostel</Label>
-      <div className="relative border mt-2">
-        <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-md bg-white py-1.5 pr-2 pl-3 text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-          <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
-            {/* <img alt="" src={selected.avatar} className="size-5 shrink-0 rounded-full" /> */}
-            <span className="block truncate">{selected.name}</span>
-          </span>
-          <ChevronUpDownIcon
-            aria-hidden="true"
-            className="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-          />
-        </ListboxButton>
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">{title}</label>
+      <select
+        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+        value={value?.value || ''}
+        onChange={(e) => {
+          const selected = options.find(opt => opt.value === e.target.value);
+          onChange(selected);
+        }}
+        disabled={isDisabled}
+      >
+        <option value="">Select {title}</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
 
-        <ListboxOptions
-          transition
-          className="absolute py-2 z-10  mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm"
-        >
-          {people.map((person) => (
-            <ListboxOption
-              key={person.id}
-              value={person}
-              className="group relative hover:bg-yellow-200 cursor-default py-2 pr-9 pl-3 text-gray-900 select-none data-focus:bg-indigo-600 data-focus:text-white data-focus:outline-hidden"
-            >
-              <div className="flex items-center">
-                {/* <img alt="" src={person.avatar} className="size-5 shrink-0 rounded-full" /> */}
-                <span className="ml-3 block truncate font-normal group-data-selected:font-semibold">{person.name}</span>
-              </div>
-
-              <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-not-data-selected:hidden group-data-focus:text-white">
-                <CheckIcon aria-hidden="true" className="size-5" />
-              </span>
-            </ListboxOption>
-          ))}
-        </ListboxOptions>
-      </div>
-    </Listbox>
-  )
-}
+export default Select;

@@ -25,7 +25,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='register' element={<Register />} />
             <Route path='login' element={<Login />} />
-            <Route path='hoste' element={<Hostel />} />
+            <Route path='hostel' element={<Hostel />} />
             <Route path='events' element={<Events />} />
             <Route path='hostel/:id' element={<SelectedRoomsDetails />} />
             <Route path='destination/cities/:id' element={<Cities />} />

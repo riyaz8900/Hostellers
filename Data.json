@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "state": "Karnataka",
+    "hostelName": "Koramangala Hosteller Bangalore",
+    "title": "Kormangla Hosteller Bangalore",
+    "description": "Affordable and cozy room with AC and Wi-Fi.",
+    "price": "Starting @ ₹740/-",
+    "image": "/hostel6.jpeg",
+    "checkInTime": "14:00",
+    "checkOutTime": "11:00",
+    "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"],
+    "details": "Koramangala is where Bangalore’s pulse beats the fastest. Known for its buzzing cafés, upscale shopping centers, and legendary nightlife.",
+    "moreDetails": "The Hosteller Bangalore, Koramangala, was our first step into the city, featuring suspended chrome car seats, interactive art pieces, and sleek modern design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel6.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "state": "Karnataka",
+    "hostelName": "Indiranagar Hosteller Bangalore",
+    "title": "Indiranagar Hosteller Bangalore",
+    "description": "Spacious room with shared kitchen access.",
+    "price": "Starting @ ₹840/-",
+    "image": "/hostel21.jpeg",
+    "checkInTime": "15:00",
+    "checkOutTime": "10:00",
+    "availableDates": [
+      "2025-06-01", "2025-06-02", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06",
+      "2025-06-07", "2025-06-08", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12",
+      "2025-06-13", "2025-06-14", "2025-06-15", "2025-06-16", "2025-06-17", "2025-06-18",
+      "2025-06-19", "2025-06-20", "2025-06-21", "2025-06-22", "2025-06-23", "2025-06-24",
+      "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-28", "2025-06-29", "2025-06-30"
+    ],
+    "details": "Known for its buzzing cafés and upscale shopping centers, Indiranagar is a hotspot for startups and travelers alike.",
+    "moreDetails": "Inspired by Bangalore’s tech culture, interiors include suspended chrome car seats, interactive art pieces, and sleek design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  },
+   {
+    "id": 4,
+    "state": "Karnataka",
+    "hostelName": "Brigrade Hosteller Bangalore",
+    "title": "Indiranagar Hosteller Bangalore",
+    "description": "Spacious room with shared kitchen access.",
+    "price": "Starting @ ₹840/-",
+    "image": "/hostel7.jpeg",
+    "checkInTime": "15:00",
+    "checkOutTime": "10:00",
+    "availableDates": [
+      "2025-06-01", "2025-06-02", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06",
+      "2025-06-07", "2025-06-08", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12",
+      "2025-06-13", "2025-06-14", "2025-06-15", "2025-06-16", "2025-06-17", "2025-06-18",
+      "2025-06-19", "2025-06-20", "2025-06-21", "2025-06-22", "2025-06-23", "2025-06-24",
+      "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-28", "2025-06-29", "2025-06-30"
+    ],
+    "details": "Known for its buzzing cafés and upscale shopping centers, Indiranagar is a hotspot for startups and travelers alike.",
+    "moreDetails": "Inspired by Bangalore’s tech culture, interiors include suspended chrome car seats, interactive art pieces, and sleek design.",
+    "rooms": [
+      {
+        "id": 1,
+        "image": "/hostel6.jpeg",
+        "title": "Bed in 8 Bed Mixed Dormitory with Balcony",
+        "guests": 1,
+        "originalPrice": 522,
+        "discountedPrice": 339,
+        "discountLabel": "35% OFF",
+        "duration": "1 Night",
+        "description": "Spacious 216 sq ft room with comfy bunk beds",
+        "soldOut": true,
+        "addBed": true
+      },
+      {
+        "id": 2,
+        "image": "/hostel21.jpeg",
+        "title": "Private Room with Sea View",
+        "guests": 2,
+        "originalPrice": 1200,
+        "discountedPrice": 900,
+        "discountLabel": "25% OFF",
+        "duration": "2 Nights",
+        "description": "Enjoy a private room with a sea view and balcony",
+        "soldOut": false,
+        "addBed": true
+      }
+    ],
+    "categories": [
+      {
+        "type": "8 bed Mixed dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "4 bed male dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "2 days",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "8 bed female dormitory",
+        "image": "/hostel21.jpeg",
+        "price": "879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      },
+      {
+        "type": "Deluxe Room with Balcony",
+        "image": "/hostel21.jpeg",
+        "price": "2879",
+        "stayDuration": "1 day",
+        "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-10", "2025-06-11"]
+      }
+    ]
+  }
+  
+  
+]
