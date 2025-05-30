@@ -5,7 +5,7 @@ import Loader from './Loader'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-  import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 function Register() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true)
@@ -19,30 +19,35 @@ function Register() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false)
-        }, 1500) // simulate loading delay (1.5s)
+        }, 1500)
 
         return () => clearTimeout(timer)
     }, [])
     if (loading) {
         return <Loader />
     }
-   const register = async (e) => {
-    e.preventDefault();
-    try {
-       const response = await axios.post("http://localhost:5000/api/auth/register", {
-    username: formData.email,       
-  password: formData.password,
-  fullName: formData.fullName,
-  phone: formData.phone
-});
+    const register = async (e) => {
+        setLoading(true)
+        e.preventDefault();
+        try {
+            const response = await axios.post("https://backend-txs7.onrender.com/api/auth/register", {
+                username: formData.email,
+                password: formData.password,
+                fullName: formData.fullName,
+                phone: formData.phone
+            });
 
-        toast.success("Registration successful");
-        navigate("/login");
-    } catch (error) {
-        console.log(error);
-        toast.error('Something went wrong during registration');
+            toast.success("Registration successful");
+            setLoading(false)
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+            toast.error('Something went wrong during registration');
+        }
+        finally{
+            setLoading(false);
+        }
     }
-}
 
     const handleChange = (e) => {
         setFormData(prev => ({
@@ -61,7 +66,7 @@ function Register() {
                 <li>
                     <span className="mx-2"> / </span>
                 </li>
-                 <li>Register</li>
+                <li>Register</li>
 
 
                 {/* <li className="text-gray-800 font-semibold">{selectedHostel.title}</li> */}
@@ -73,34 +78,34 @@ function Register() {
                         <h1 className='lg:text-2xl'>Create account</h1>
                         <p className='text-gray-400'>Sign up for the best prices, offers and rewards</p>
                     </div>
-                 
+
                     <form className='mt-5' onSubmit={register}>
-            <div className="py-2">
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name *</label>
-              <input type="text" name="fullName" value={formData.fullName} onChange={handleChange}
-                className="w-full border rounded-md py-2 px-3" required />
-            </div>
+                        <div className="py-2">
+                            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name *</label>
+                            <input type="text" name="fullName" value={formData.fullName} onChange={handleChange}
+                                className="w-full border rounded-md py-2 px-3" required />
+                        </div>
 
-            <div className="py-2">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange}
-                className="w-full border rounded-md py-2 px-3" required />
-            </div>
+                        <div className="py-2">
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
+                            <input type="email" name="email" value={formData.email} onChange={handleChange}
+                                className="w-full border rounded-md py-2 px-3" required />
+                        </div>
 
-            <div className="py-2">
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number *</label>
-              <input type="text" name="phone" value={formData.phone} onChange={handleChange}
-                className="w-full border rounded-md py-2 px-3" required />
-            </div>
+                        <div className="py-2">
+                            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number *</label>
+                            <input type="text" name="phone" value={formData.phone} onChange={handleChange}
+                                className="w-full border rounded-md py-2 px-3" required />
+                        </div>
 
-            <div className="py-2">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password *</label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange}
-                className="w-full border rounded-md py-2 px-3" required />
-            </div>
+                        <div className="py-2">
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password *</label>
+                            <input type="password" name="password" value={formData.password} onChange={handleChange}
+                                className="w-full border rounded-md py-2 px-3" required />
+                        </div>
 
-            <button type="submit" className='bg-yellow-300 py-2 rounded w-full mt-4'>Register</button>
-             <div className='py-2 text-center w-full'>
+                        <button type="submit" className='bg-yellow-300 py-2 rounded w-full mt-4'>Register</button>
+                        <div className='py-2 text-center w-full'>
                             <p>Already have an account? <span className='font-extrabold'><a href='/login'>Login</a></span></p>
                         </div>
                         <div className="flex items-center my-4">
@@ -121,7 +126,7 @@ function Register() {
                             <p>By registering, you agree with ourterms and conditions and privacy policy.</p>
                         </div>
 
-          </form>
+                    </form>
                 </div>
             </div>
         </div>

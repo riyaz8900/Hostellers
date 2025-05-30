@@ -23,7 +23,7 @@ function Navbar() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -95,16 +95,8 @@ function Navbar() {
             <li><Link to="/workstation" className="block px-4 py-2">Work Stations</Link></li>
             <li><Link to="/events" className="block px-4 py-2">Events</Link></li>
             <li><Link to="/groups" className="block px-4 py-2">Groups</Link></li>
-            <li>
-              <Link to="/register" className="block px-4 py-2" onClick={() => setIsDropdownOpen(false)}>
-                Signup
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" className="block px-4 py-2" onClick={() => setIsDropdownOpen(false)}>
-                SignIn
-              </Link>
-            </li>
+
+           
 
             <div ref={userRef} className="relative">
               <div
@@ -116,10 +108,36 @@ function Navbar() {
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-[200px] bg-white shadow-lg rounded-lg border border-gray-200 z-10">
                   <ul className="text-sm text-gray-700">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600">Volunteer</li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600">Developers & Owners</li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600">Contact us</li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600">About us</li>
+                     <li>
+                      <Link to="/volunters" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                        Volunteer
+                      </Link>
+                    </li>
+                     <li>
+                      <Link to="/admin-owners" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                        Admin & Owners
+                      </Link>
+                    </li>
+                     <li>
+                      <Link to="/contact" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                        Contact us
+                      </Link>
+                    </li>
+                     <li>
+                      <Link to="/about" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                      About us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/register" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                        Signup
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/login" className="block px-4 py-2 hover:bg-gray-100 cursor-pointer hover:border-r-4 border-blue-600" onClick={() => setIsDropdownOpen(false)}>
+                        SignIn
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               )}

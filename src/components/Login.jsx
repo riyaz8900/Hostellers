@@ -19,6 +19,7 @@ function Login() {
   }, [])
 
   const handleLogin = async (e) => {
+    setLoading(true)
     e.preventDefault()
 
     try {
@@ -36,11 +37,14 @@ function Login() {
       )
 
       localStorage.setItem('token', response.data.token)
-      toast.success('LOgin success')
+      toast.success('Login success')
+      setLoading(false)
       navigate('/')
     } catch (err) {
       console.error('Login failed:', err.response?.data)
       toast.error('Login failed')
+    }finally{
+       setLoading(false)
     }
   }
 
